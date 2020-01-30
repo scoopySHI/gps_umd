@@ -59,6 +59,12 @@ install(PROGRAMS
   DESTINATION bin
 )
 
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION include/${PROJECT_NAME}
+  FILES_MATCHING PATTERN "*.h"
+  PATTERN ".git" EXCLUDE)
+
+
 # Export package dependencies
 ament_export_dependencies(ament_cmake)
 ament_export_dependencies(ament_cmake_python)
